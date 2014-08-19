@@ -1,0 +1,14 @@
+<h2>Unidades de Ensino</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "unidade-ensino", "action" => "index"), null, true) ?>">Voltar</a>
+
+<form class="pure-form pure-form-stacked" action="<?= $this->url(array("controller" => "unidade-ensino", "action" => "criar"), null, true) ?>" method="post">
+    <fieldset>
+        <legend>Cadastrar Unidade de Ensino</legend>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Nome"/>
+            
+        <button type="submit" class="pure-button pure-button-primary">Cadastrar</button>
+    </fieldset>
+
+</form>

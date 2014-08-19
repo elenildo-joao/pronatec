@@ -1,0 +1,38 @@
+<h2>Cursos</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "curso", "action" => "novo"), null, true) ?>">Novo</a>
+<br /><br />
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Curso</th>
+            <th>Carga Horária</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach ($this->dados as $key => $curso):
+        ?>
+            <tr>
+                <td><?= $curso['cur_nome'] ?></td>
+                <td><?= $curso['cur_carga_horaria'] ?></td>
+
+                <td class="td-botao">
+                    <a href="<?= $this->url(array("controller" => "curso", "action" => "editar", "id" => $curso['cur_id']), null, true) ?>">
+                        <ul id="icons" class="ui-widget ui-helper-clearfix">
+                            <li class="ui-state-default ui-corner-all" title="Editar"><span class="ui-icon ui-icon-pencil"></span></li>
+                        </ul>
+                    </a>
+                </td>
+                <td class="td-botao">
+                    <a href="<?= $this->url(array("controller" => "curso", "action" => "excluir", "id" => $curso['cur_id']), null, true) ?>">
+                        <ul id="icons" class="ui-widget ui-helper-clearfix">
+                            <li class="ui-state-default ui-corner-all" title="Excluir"><span class="ui-icon ui-icon-close"></span></li>
+                        </ul>
+                    </a>
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

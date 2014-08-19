@@ -1,0 +1,16 @@
+<h2>Unidades de Ensino</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "unidade-ensino", "action" => "index"), null, true) ?>">Voltar</a>
+
+<form class="pure-form pure-form-stacked" action="<?= $this->url(array("controller" => "unidade-ensino", "action" => "atualizar"), null, true) ?>" method="post">
+    <fieldset>
+        <legend>Editar Unidade de Ensino</legend>
+        <input type="hidden" name="idUnidadeEnsino" value="<?= $this->unidadeEnsino['uni_id'] ?>" />
+        
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" value="<?= $this->unidadeEnsino['uni_nome'] ?>"/>
+            
+        <button type="submit" class="pure-button pure-button-primary">Atualizar</button>
+    </fieldset>
+
+</form>

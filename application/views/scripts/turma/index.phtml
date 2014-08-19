@@ -1,0 +1,51 @@
+<h2>Turmas</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "turma", "action" => "novo"), null, true) ?>">Novo</a>
+<br /><br />
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data Início</th>
+            <th>Data Fim</th>
+            <th>Curso</th>
+            <th>Unidade de Ensino</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($this->dados as $key => $turma):
+    ?>
+        <tr>
+            <td><?= $turma['tur_nome'] ?></td>
+            <td><?= $turma['tur_data_inicio'] ?></td>
+            <td><?= $turma['tur_data_fim'] ?></td>
+            <td><?= $turma['cur_nome'] ?></td>
+            <td><?= $turma['uni_nome'] ?></td>
+
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "turma", "action" => "visualizar", "id" => $turma['tur_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Editar"><span class="ui-icon ui-icon-search"></span></li>
+                    </ul>
+                </a>
+            </td>
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "turma", "action" => "editar", "id" => $turma['tur_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Editar"><span class="ui-icon ui-icon-pencil"></span></li>
+                    </ul>
+                </a>
+            </td>
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "turma", "action" => "excluir", "id" => $turma['tur_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Excluir"><span class="ui-icon ui-icon-close"></span></li>
+                    </ul>
+                </a>
+            </td>
+            
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

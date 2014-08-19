@@ -1,0 +1,77 @@
+<h2>Turmas</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "turma", "action" => "index"), null, true) ?>">Voltar</a>
+<br /><br />
+<h3>Turma</h3>
+<br />
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data Início</th>
+            <th>Data Fim</th>
+            <th>Curso</th>
+            <th>Unidade de Ensino</th>     
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?= $this->turma['tur_nome'] ?></td>
+            <td><?= $this->turma['tur_data_inicio'] ?></td>
+            <td><?= $this->turma['tur_data_fim'] ?></td>
+            <td><?= $this->turma['cur_nome'] ?></td>
+            <td><?= $this->turma['uni_nome'] ?></td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<h3>Alunos</h3>
+<br />
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Matricula</th>
+            <th>Celular</th>
+            <th>E-Mail</th>   
+        </tr>
+    </thead>
+    <tbody>
+        
+    <?php
+    foreach ($this->alunos as $key => $aluno):
+    ?>
+        <tr>
+            <td><?= $aluno['alu_nome'] ?></td>
+            <td><?= $aluno['alu_cpf'] ?></td>
+            <td><?= $aluno['alu_matricula'] ?></td>
+            <td><?= $aluno['alu_celular'] ?></td>
+            <td><?= $aluno['alu_email'] ?></td>
+
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "aluno", "action" => "visualizar", "id" => $aluno['alu_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Editar"><span class="ui-icon ui-icon-search"></span></li>
+                    </ul>
+                </a>
+            </td>
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "aluno", "action" => "editar", "id" => $aluno['alu_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Editar"><span class="ui-icon ui-icon-pencil"></span></li>
+                    </ul>
+                </a>
+            </td>
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "aluno", "action" => "excluir", "id" => $aluno['alu_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Excluir"><span class="ui-icon ui-icon-close"></span></li>
+                    </ul>
+                </a>
+            </td>
+            
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

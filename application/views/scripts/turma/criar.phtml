@@ -1,0 +1,10 @@
+<?php if ($this->erro) :?>
+<div class="ui-widget" id="erro-upload">
+    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+        <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .7em;"></span> 
+        <?= $this->erro; ?> </p>
+    </div>
+</div>
+<br />
+<a class="pure-button" href="<?=$this->url(array("controller"=>"turma","action"=>"novo"),null,true)?>">Voltar</a>
+<?php endif; ?>

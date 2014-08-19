@@ -1,0 +1,46 @@
+<h2>Usuários</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "usuario", "action" => "novo"), null, true) ?>">Novo</a>
+<br /><br />
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Perfil</th>
+            <th>Último acesso</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($this->dados as $key => $usuario):
+        ?>
+        <tr>
+            <td><?= $usuario['usu_nome'] ?></td>
+            <td><?= $usuario['log_login'] ?></td>
+            <td><?= $usuario['usu_email'] ?></td>
+            <td><?= $usuario['usu_telefone'] ?></td>
+            <td><?= $usuario['per_perfil'] ?></td>
+            <td><?= $usuario['log_ultimo_acesso'] ?></td>
+
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "usuario", "action" => "editar", "id" => $usuario['usu_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Editar"><span class="ui-icon ui-icon-pencil"></span></li>
+                    </ul>
+                </a>
+            </td>
+            <td class="td-botao">
+                <a href="<?= $this->url(array("controller" => "usuario", "action" => "excluir", "id" => $usuario['usu_id']), null, true) ?>">
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all" title="Excluir"><span class="ui-icon ui-icon-close"></span></li>
+                    </ul>
+                </a>
+            </td>
+            
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

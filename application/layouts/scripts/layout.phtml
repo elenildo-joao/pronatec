@@ -1,0 +1,66 @@
+<?=$this->doctype('XHTML1_TRANSITIONAL')?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <base href="http://<?=$_SERVER['HTTP_HOST'] . $this->baseUrl()?>/" />        
+        <?php
+            $this->headLink()->prependStylesheet('/css/estilo.css');
+            $this->headLink()->appendStylesheet('/css/smoothness/jquery-ui-1.10.3.custom.min.css');
+            $this->headLink()->appendStylesheet('/css/pure/pure-min.css');
+            $this->headLink()->appendStylesheet('/css/pure/pureskin.css');
+            $this->headScript()->prependFile('/js/jquery-1.10.2.min.js'); 
+            $this->headScript()->appendFile('/js/jquery-ui-1.10.3.custom.min.js');
+            $this->headScript()->appendFile('/js/jquery-ui-functions.js');
+            $this->headScript()->appendFile('/js/yui-min.js');
+            $this->headScript()->appendFile('/js/menu.js');
+            
+            echo $this->headLink() . "\n";
+            echo $this->headScript() . "\n";
+        ?> 
+        
+        <title>
+            Pronatec
+        </title>
+    </head>
+    <body class="pure-skin-pronatec">
+    <div id="geral">
+        <div id="topo">
+            <div id="topo-left"><img src="/img/ifba.png" /></div>
+            <div id="topo-right"><img src="/img/pronatec.png" /></div>
+        </div>
+        <div class="pure-menu pure-menu-open pure-menu-horizontal" id="demo-horizontal-menu">
+            <ul id="std-menu-items">
+                <?php if($this->usuarioLogado): ?>
+                <li><a href="<?=$this->url(array("controller"=>"index","action"=>"index"),null,true)?>">Página Inicial</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"usuario","action"=>"index"),null,true)?>">Usuários</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"curso","action"=>"index"),null,true)?>">Cursos</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"unidade-ensino","action"=>"index"),null,true)?>">Unidades de Ensino</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"turma","action"=>"index"),null,true)?>">Turmas</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"frequencia","action"=>"index"),null,true)?>">Frequência</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"relatorio","action"=>"index"),null,true)?>">Relatórios</a></li>
+                <li><a href="<?=$this->url(array("controller"=>"autenticacao","action"=>"logout"),null,true)?>">Sair</a></li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <!--
+            <?php if($this->usuarioLogado): ?>
+            <div id="login-div">
+                <p>
+                    Olá, <?= $this->usuarioLogado->usu_nome ?> |
+                    
+                </p>
+            </div>
+            <?php endif; ?>
+        -->
+        <div id="conteudo-geral">
+            <div id="conteudo">
+                <?php echo $this->layout()->content; ?>
+            </div>
+
+            <div id="rodape">
+                
+            </div>		
+        </div>
+    </div>
+    </body>
+</html>

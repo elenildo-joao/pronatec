@@ -1,0 +1,37 @@
+<h2>Turma</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "turma", "action" => "index"), null, true) ?>">Voltar</a>
+
+<form class="pure-form pure-form-stacked" action="<?= $this->url(array("controller" => "turma", "action" => "criar"), null, true) ?>" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Cadastrar Turma</legend>
+        
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Nome"/>
+        
+        <label for="data_inicio">Data Início</label>
+        <input type="text" name="data_inicio" id="data_inicio" class="datepicker" placeholder="Data Início"/>
+        
+        <label for="data_fim">Data Fim</label>
+        <input type="text" name="data_fim" id="data_fim" class="datepicker" placeholder="Data Fim"/>
+        
+        <label for="curso">Curso</label>
+        <select name="cur_id" id="curso">
+            <?php foreach ($this->cursos as $key => $curso): ?>
+                <option value="<?= $curso['cur_id']; ?>" ><?= $curso['cur_nome']; ?></option>
+            <?php endforeach; ?>
+        </select>
+        
+        <label for="unidade_ensino">Unidade de Ensino</label>
+        <select name="uni_id" id="unidade_ensino">
+            <?php foreach ($this->unidades as $key => $unidade): ?>
+                <option value="<?= $unidade['uni_id']; ?>" ><?= $unidade['uni_nome']; ?></option>
+            <?php endforeach; ?>
+        </select>
+        
+        <label for="alunos">Importação de Alunos</label>
+        <input type="file" id="alunos" name="arquivo" />
+        <br /><br />
+        <button type="submit" class="pure-button pure-button-primary">Cadastrar</button>
+    </fieldset>
+</form>

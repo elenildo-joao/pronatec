@@ -1,0 +1,19 @@
+<h2>Cursos</h2>
+
+<a class="pure-button" href="<?= $this->url(array("controller" => "curso", "action" => "index"), null, true) ?>">Voltar</a>
+
+<form class="pure-form pure-form-stacked" action="<?= $this->url(array("controller" => "curso", "action" => "atualizar"), null, true) ?>" method="post">
+    <fieldset>
+        <legend>Editar Curso</legend>
+        <input type="hidden" name="idCurso" value="<?= $this->curso['cur_id'] ?>" />
+
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" value="<?= $this->curso['cur_nome'] ?>" />
+        
+        <label for="cargaHoraria">Carga Horária</label>
+        <input type="text" name="cargaHoraria" id="cargaHoraria" value="<?= $this->curso['cur_carga_horaria'] ?>" />
+        
+        <button type="submit" class="pure-button pure-button-primary">Atualizar</button>
+    </fieldset>
+
+</form>
