@@ -21,7 +21,7 @@
             <td><?= $usuario['usu_nome'] ?></td>
             <td><?= $usuario['log_login'] ?></td>
             <td><?= $usuario['usu_email'] ?></td>
-            <td><?= $usuario['usu_telefone'] ?></td>
+            <td><?= $this->formataTelefone($usuario['usu_telefone']) ?></td>
             <td><?= $usuario['per_perfil'] ?></td>
             <td><?= $usuario['log_ultimo_acesso'] ?></td>
 

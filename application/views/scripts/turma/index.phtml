@@ -18,8 +18,8 @@
     ?>
         <tr>
             <td><?= $turma['tur_nome'] ?></td>
-            <td><?= $turma['tur_data_inicio'] ?></td>
-            <td><?= $turma['tur_data_fim'] ?></td>
+            <td><?= $this->date($turma['tur_data_inicio']) ?></td>
+            <td><?= $this->date($turma['tur_data_fim']) ?></td>
             <td><?= $turma['cur_nome'] ?></td>
             <td><?= $turma['uni_nome'] ?></td>
 
