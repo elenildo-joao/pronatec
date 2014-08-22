@@ -39,8 +39,8 @@ class Application_Model_Turma
     public function insert($dados) {
         $dadosTurma = array(
             'tur_nome' => $dados['nome'],
-            'tur_data_inicio' => $dados['data_inicio'],
-            'tur_data_fim' => $dados['data_fim'],
+            'tur_data_inicio' => Application_Model_Data::dataMysql($dados['data_inicio']),
+            'tur_data_fim' => Application_Model_Data::dataMysql($dados['data_fim']),
             'cur_id' => $dados['cur_id'],
             'uni_id' => $dados['uni_id']
         );
@@ -51,8 +51,8 @@ class Application_Model_Turma
     public function update(array $dados) {
         $dadosTurma = array(
             'tur_nome' => $dados['nome'],
-            'tur_data_inicio' => $dados['data_inicio'],
-            'tur_data_fim' => $dados['data_fim'],
+            'tur_data_inicio' => Application_Model_Data::dataMysql($dados['data_inicio']),
+            'tur_data_fim' => Application_Model_Data::dataMysql($dados['data_fim']),
             'cur_id' => $dados['cur_id'],
             'uni_id' => $dados['uni_id']
         );

@@ -9,7 +9,11 @@ class Application_Model_Aluno
     }
     
     public function insertAlunos($arrayAlunos, $tur_id) {
-        foreach ($arrayAlunos as $aluno){            
+        foreach ($arrayAlunos as $aluno){ 
+            if ( $aluno['V'] != 'CONFIRMADA' && $aluno['V'] != 'EM CURSO'){
+                continue;
+            }
+                
             //Adicionando zeros à esquerda do CPF
             $numZeros = 11 - strlen($aluno['G']);
             

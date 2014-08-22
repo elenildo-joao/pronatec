@@ -44,7 +44,8 @@ class Application_Model_Usuario {
             'usu_nome' => $dados['nome'],
             'usu_email' => $dados['email'],
             'usu_telefone' => $dados['telefone'],
-            'per_id' => $dados['perfil'],
+            'per_id' => $dados['per_id'],
+            'uni_id' => $dados['uni_id'],
             'log_id' => $idLogin
         );
 
@@ -58,7 +59,8 @@ class Application_Model_Usuario {
             'usu_nome' => $dados['nome'],
             'usu_email' => $dados['email'],
             'usu_telefone' => $dados['telefone'],
-            'per_id' => $dados['perfil']
+            'per_id' => $dados['per_id'],
+            'uni_id' => $dados['uni_id']
         );
 
         $whereUsuario = $this->usuario->getAdapter()->quoteInto('usu_id = ?', (int) $dados['idusuario']);

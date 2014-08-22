@@ -10,6 +10,7 @@
             <th>E-mail</th>
             <th>Telefone</th>
             <th>Perfil</th>
+            <th>Unidade de Ensino</th>
             <th>Último acesso</th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
             <td><?= $usuario['usu_email'] ?></td>
             <td><?= $this->formataTelefone($usuario['usu_telefone']) ?></td>
             <td><?= $usuario['per_perfil'] ?></td>
+            <td><?= $usuario['uni_nome'] ?></td>
             <td><?= $usuario['log_ultimo_acesso'] ?></td>
 
             <td class="td-botao">

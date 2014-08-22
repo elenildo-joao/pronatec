@@ -24,6 +24,13 @@ $this->headScript()->appendFile('/js/mascaras.js');
                 <option value="<?= $perfil['per_id']; ?>" <?= ($perfil['per_id'] == $this->usuario['per_id']) ? 'selected="selected"' : ''; ?>><?= $perfil['per_perfil']; ?></option>
             <?php endforeach; ?>
         </select>
+        
+        <label for="unidade_ensino">Unidade de Ensino</label>
+        <select name="uni_id" id="unidade_ensino">
+            <?php foreach ($this->unidadesEnsino as $key => $unidadeEnsino): ?>
+                <option value="<?= $unidadeEnsino['uni_id']; ?>" <?= ($unidadeEnsino['uni_id'] == $this->usuario['uni_id']) ? 'selected="selected"' : ''; ?> ><?= $unidadeEnsino['uni_nome']; ?></option>
+            <?php endforeach; ?>
+        </select>
 
         <label for="email">E-mail</label>
         <input type="text" name="email" id="email" value="<?= $this->usuario['usu_email']; ?>"/>

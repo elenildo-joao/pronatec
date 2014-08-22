@@ -44,9 +44,13 @@ class UsuarioController extends Zend_Controller_Action
     public function novoAction()
     {
         $modelPerfil = new Application_Model_Perfil();
+        $modelUniEnsino = new Application_Model_UnidadeEnsino();
+        
         $perfis = $modelPerfil->select();
+        $unidadesEnsino = $modelUniEnsino->select();
 
         $this->view->assign("perfis", $perfis);
+        $this->view->assign("unidadesEnsino", $unidadesEnsino);
     }
 
     /*
@@ -65,11 +69,15 @@ class UsuarioController extends Zend_Controller_Action
     public function editarAction()
     {
         $modelPerfil = new Application_Model_Perfil();
+        $modelUniEnsino = new Application_Model_UnidadeEnsino();
+        
         $perfis = $modelPerfil->select();
+        $unidadesEnsino = $modelUniEnsino->select();
         
         $usuario = $this->modelUsuario->find($this->_getParam('id'));
 
         $this->view->assign("perfis", $perfis);
+        $this->view->assign("unidadesEnsino", $unidadesEnsino);
         $this->view->assign("usuario", $usuario);
     }
 

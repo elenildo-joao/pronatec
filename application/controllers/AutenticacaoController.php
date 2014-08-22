@@ -52,7 +52,9 @@ class AutenticacaoController extends Zend_Controller_Action {
                 $usuarioObj->usu_nome = $usuario['usu_nome'];
                 $usuarioObj->usu_email = $usuario['usu_email'];
                 $usuarioObj->per_id = $usuario['per_id'];  
-                $usuarioObj->per_perfil = $usuario['per_perfil'];             
+                $usuarioObj->per_perfil = $usuario['per_perfil'];  
+                $usuarioObj->uni_id = $usuario['uni_id'];
+                $usuarioObj->uni_nome = $usuario['uni_nome'];
                 
                 $storage->write($usuarioObj);
                 
